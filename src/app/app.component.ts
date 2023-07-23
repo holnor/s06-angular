@@ -24,4 +24,12 @@ export class AppComponent {
       });
   }
 
+  onChangeLast() {
+    this.serverElements[this.serverElements.length - 1].name = 'Changed'
+
+  }
+
+  onDestroyLast() {
+    this.serverElements.pop();
+  }
 }
