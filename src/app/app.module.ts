@@ -9,6 +9,10 @@ import { ServerElementComponent } from './server-element/server-element.componen
 import { GameControlComponent } from './game-control/game-control.component';
 import { OddComponent } from './odd/odd.component';
 import { EvenComponent } from './even/even.component';
+import { TimerControlComponent } from './timer-control/timer-control.component';
+import { DisplayTimeComponent } from './display-time/display-time.component';
+import { ShoppingListComponent } from './shopping-list/shopping-list.component';
+import { ShoppingListItemComponent } from './shopping-list-item/shopping-list-item.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +21,11 @@ import { EvenComponent } from './even/even.component';
     ServerElementComponent,
     GameControlComponent,
     OddComponent,
-    EvenComponent
+    EvenComponent,
+    TimerControlComponent,
+    DisplayTimeComponent,
+    ShoppingListComponent,
+    ShoppingListItemComponent
   ],
   imports: [
     BrowserModule,

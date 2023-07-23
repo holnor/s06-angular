@@ -9,6 +9,7 @@ export class AppComponent {
   serverElements = [{name: 'Test server', type: 'server', content: 'test content'}];
   oddNumbers: number[] = [];
   evenNumbers: number[] = [];
+  elapsedTime = 0;
 
 
 
@@ -46,5 +47,10 @@ export class AppComponent {
     }
     console.log(this.evenNumbers)
     console.log(this.oddNumbers)
+  }
+
+  onTimeEmitted(time: number) {
+    this.elapsedTime = time;
+    console.log(time)
   }
 }
