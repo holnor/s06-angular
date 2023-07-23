@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   serverElements = [{name: 'Test server', type: 'server', content: 'test content'}];
+  oddNumbers: number[] = [];
+  evenNumbers: number[] = [];
 
-  onServerAdded(serverData: {serverName: string, serverContent: string}) {
+
+
+  onServerAdded(serverData: { serverName: string, serverContent: string }) {
     this.serverElements.push({
       type: 'server',
       name: serverData.serverName,
@@ -16,12 +20,12 @@ export class AppComponent {
     });
   }
 
-  onBlueprintAdded(blueprintData: {serverName: string, serverContent: string}) {
-      this.serverElements.push({
-        type: 'blueprint',
-        name: blueprintData.serverName,
-        content: blueprintData.serverContent
-      });
+  onBlueprintAdded(blueprintData: { serverName: string, serverContent: string }) {
+    this.serverElements.push({
+      type: 'blueprint',
+      name: blueprintData.serverName,
+      content: blueprintData.serverContent
+    });
   }
 
   onChangeLast() {
@@ -31,5 +35,16 @@ export class AppComponent {
 
   onDestroyLast() {
     this.serverElements.pop();
+  }
+
+  onIntervalFired(firedNumber: number) {
+    console.log('firedNuber is: ' + firedNumber)
+    if(firedNumber % 2 === 0){
+      this.evenNumbers.push(firedNumber);
+    } else{
+      this.oddNumbers.push(firedNumber);
+    }
+    console.log(this.evenNumbers)
+    console.log(this.oddNumbers)
   }
 }
